@@ -50,8 +50,8 @@ description: |
                target: mir-libs
        - similarly for the gnome platform based apps
           plugs:
-              gnome318-platform:
-                default-provider: gnome318-udt:gnome318-platform
+              gnome-3-24-platform:
+                default-provider: gnome-3-24:gnome-3-24-platform
                 interface: content
                 target: gnome-platform
          and then make your apps use it:

@@ -7,10 +7,12 @@ if [ -z "$RUNTIME" ]; then
   RUNTIME=$SNAP
 else
   # add general paths not added by snapcraft due to runtime snap
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$RUNTIME/lib/$ARCH:$RUNTIME/usr/lib/$ARCH
   export PATH=$PATH:$RUNTIME/usr/bin
   WITH_RUNTIME=yes
 fi
+
+# Ensure we can find libs in the snap
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$RUNTIME/lib/$ARCH:$RUNTIME/usr/lib/$ARCH
 
 # XKB config
 export XKB_CONFIG_ROOT=$RUNTIME/usr/share/X11/xkb

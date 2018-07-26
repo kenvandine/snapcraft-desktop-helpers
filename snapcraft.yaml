@@ -206,6 +206,11 @@ parts:
       - xdg-user-dirs
       - ibus-gtk3
       - libibus-1.0-5
+    override-build: |
+      snapcraftctl build
+      mkdir -pv $SNAPCRAFT_PART_INSTALL/data-dir/themes
+      mkdir -pv $SNAPCRAFT_PART_INSTALL/data-dir/icons
+      mkdir -pv $SNAPCRAFT_PART_INSTALL/data-dir/sounds
   desktop-qt4:
     source: .
     source-subdir: qt
@@ -272,3 +277,6 @@ parts:
     override-build: |
       snapcraftctl build
       mkdir -pv $SNAPCRAFT_PART_INSTALL/gnome-platform
+      mkdir -pv $SNAPCRAFT_PART_INSTALL/data-dir/themes
+      mkdir -pv $SNAPCRAFT_PART_INSTALL/data-dir/icons
+      mkdir -pv $SNAPCRAFT_PART_INSTALL/data-dir/sounds
